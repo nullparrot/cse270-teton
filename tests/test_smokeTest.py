@@ -24,7 +24,7 @@ class TestSmoke():
     self.driver.quit()
   
   def test_1HomePage(self):
-    self.driver.get("http://100.66.168.50:5500/teton/1.6/index.html")
+    self.driver.get("https://nullparrot.github.io/cse270-teton/index.html")
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".header-logo img")
     assert len(elements) > 0
     assert self.driver.find_element(By.CSS_SELECTOR, ".header-title > h1").text == "Teton Idaho"
@@ -32,7 +32,7 @@ class TestSmoke():
     assert self.driver.title == "Teton Idaho CoC"
   
   def test_2HometoJoin(self):
-    self.driver.get("http://100.66.168.50:5500/teton/1.6/index.html")
+    self.driver.get("https://nullparrot.github.io/cse270-teton/index.html")
     self.driver.set_window_size(1200, 768)
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1")
     assert len(elements) > 0
@@ -45,14 +45,14 @@ class TestSmoke():
     assert len(elements) > 0
   
   def test_3DirectoryPage(self):
-    self.driver.get("http://100.66.168.50:5500/teton/1.6/directory.html")
+    self.driver.get("https://nullparrot.github.io/cse270-teton/directory.html")
     self.driver.find_element(By.ID, "directory-grid").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".gold-member:nth-child(9) > p:nth-child(2)").text == "Teton Turf and Tree"
     self.driver.find_element(By.ID, "directory-list").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".gold-member:nth-child(9) > p:nth-child(2)").text == "Teton Turf and Tree"
   
   def test_4JoinPage(self):
-    self.driver.get("http://100.66.168.50:5500/teton/1.6/join.html")
+    self.driver.get("https://nullparrot.github.io/cse270-teton/join.html")
     elements = self.driver.find_elements(By.NAME, "fname")
     assert len(elements) > 0
     self.driver.find_element(By.NAME, "fname").send_keys("Andrew")
@@ -64,7 +64,7 @@ class TestSmoke():
     assert len(elements) > 0
   
   def test_5AdminPage(self):
-    self.driver.get("http://100.66.168.50:5500/teton/1.6/admin.html")
+    self.driver.get("https://nullparrot.github.io/cse270-teton/admin.html")
     elements = self.driver.find_elements(By.ID, "username")
     assert len(elements) > 0
     self.driver.find_element(By.ID, "username").send_keys("snek")
